@@ -1,0 +1,144 @@
+/* line 1, C:/wamp64/www/prove-eksamen/css/style.scss */
+* {
+  font-family: 'Pacifico', cursive; }
+
+/* line 5, C:/wamp64/www/prove-eksamen/css/style.scss */
+body {
+  width: 100%;
+  background-color: #e69500;
+  height: 100%; }
+  /* line 9, C:/wamp64/www/prove-eksamen/css/style.scss */
+  body #wrapper {
+    width: 100%;
+    height: 100%; }
+    /* line 12, C:/wamp64/www/prove-eksamen/css/style.scss */
+    body #wrapper #header {
+      width: 100%;
+      height: 650px; }
+      /* line 15, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #wrapper #header .header-bg {
+        margin-top: 1%;
+        background: url(HearthStone_Logo_2016_m011.png);
+        height: 400px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; }
+        /* line 23, C:/wamp64/www/prove-eksamen/css/style.scss */
+        body #wrapper #header .header-bg .title {
+          text-align: center;
+          color: darkorange; }
+      /* line 28, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #wrapper #header .nav {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        line-height: 50px; }
+        /* line 34, C:/wamp64/www/prove-eksamen/css/style.scss */
+        body #wrapper #header .nav .li-item {
+          list-style: none;
+          width: 30%;
+          transition: 0.3s;
+          background-color: orange;
+          margin: 0 2px;
+          border: 2px solid #ffb733;
+          box-shadow: 2px 2px 2px 2px #4d4d4d;
+          text-align: center; }
+          /* line 43, C:/wamp64/www/prove-eksamen/css/style.scss */
+          body #wrapper #header .nav .li-item a {
+            color: black;
+            text-decoration: none; }
+          /* line 47, C:/wamp64/www/prove-eksamen/css/style.scss */
+          body #wrapper #header .nav .li-item:hover {
+            background-color: #ffc966;
+            transition: 0.3s; }
+      /* line 53, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #wrapper #header .form-control {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; }
+        /* line 58, C:/wamp64/www/prove-eksamen/css/style.scss */
+        body #wrapper #header .form-control .username {
+          text-align: center;
+          flex-grow: 1;
+          border: 2px solid #996300;
+          box-shadow: inset 0 0 10px black;
+          line-height: 50px; }
+        /* line 65, C:/wamp64/www/prove-eksamen/css/style.scss */
+        body #wrapper #header .form-control .password {
+          text-align: center;
+          flex-grow: 1;
+          border-radius: 5%;
+          border: 2px solid #996300;
+          box-shadow: inset 0 0 10px black;
+          line-height: 50px; }
+        /* line 73, C:/wamp64/www/prove-eksamen/css/style.scss */
+        body #wrapper #header .form-control .submit {
+          text-align: center;
+          flex-grow: 1;
+          border: 2px solid #996300;
+          box-shadow: inset 0 0 10px black;
+          line-height: 50px; }
+  /* line 83, C:/wamp64/www/prove-eksamen/css/style.scss */
+  body .filter-control {
+    flex-grow: 1;
+    display: inline-block;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0;
+    align-items: center;
+    top: 60%;
+    justify-content: space-around;
+    line-height: 50px; }
+  /* line 94, C:/wamp64/www/prove-eksamen/css/style.scss */
+  body .articels {
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    /* line 99, C:/wamp64/www/prove-eksamen/css/style.scss */
+    body .articels .articel {
+      text-align: center;
+      flex-grow: 1; }
+  /* line 104, C:/wamp64/www/prove-eksamen/css/style.scss */
+  body #main {
+    width: 100%;
+    height: 700px;
+    margin-top: 20px; }
+    /* line 108, C:/wamp64/www/prove-eksamen/css/style.scss */
+    body #main .form-control {
+      width: 100%;
+      display: flex;
+      justify-content: space-around; }
+      /* line 112, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #main .form-control .seach {
+        text-align: center;
+        width: 40%;
+        margin-left: 3%;
+        margin-right: 11%;
+        border-radius: 5%;
+        border: 2px solid #996300;
+        box-shadow: inset 0 0 10px black;
+        line-height: 50px; }
+      /* line 122, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #main .form-control .filter {
+        text-align: center;
+        flex-grow: 1;
+        border: 2px solid #996300;
+        box-shadow: inset 0 0 10px black;
+        line-height: 50px; }
+    /* line 130, C:/wamp64/www/prove-eksamen/css/style.scss */
+    body #main .classes-checkboxes-form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      text-align: center;
+      justify-content: space-around; }
+      /* line 136, C:/wamp64/www/prove-eksamen/css/style.scss */
+      body #main .classes-checkboxes-form .classes-checkboxes {
+        flex-grow: 1;
+        font-size: 2rem; }
+
+/*# sourceMappingURL=style.css.map */
