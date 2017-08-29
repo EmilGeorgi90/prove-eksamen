@@ -76,7 +76,16 @@
             </div>
         </main>
         <footer id="footer">
-            <div class="footer-left"></div>
+            <div class="footer-left">
+                <h3>if you have any errors then call Admin on this contact</h3>
+                <form action="contact.php" class="form-control">
+                    <p>name:
+                        <input type="text" name="name" class="username"> </p>
+                    <p> Bug to fix:
+                        <textarea name="bug" class="username"></textarea>
+                    </p>
+                    <input type="submit" class="submit"> </form>
+            </div>
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
