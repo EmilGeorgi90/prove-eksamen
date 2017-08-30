@@ -11,14 +11,13 @@
                 height: 100%;
                 #header {
                     width: 100%;
-                    height: 650px;
                     .header-bg {
                         margin-top: 1%;
                         background: url(HearthStone_Logo_2016_m011.png);
                         height: 400px;
                         width: 100%;
                         background-repeat: no-repeat;
-                        background-size: cover;
+                        background-size: contain;
                         background-position: center;
                         .title {
                             text-align: center;
@@ -73,7 +72,7 @@
                     }
                     .submit {
                         text-align: center;
-                        flex-grow: 1;
+                        flex-grow: 2;
                         background-color: orange;
                         transition: 0.3s;
                         border: 2px solid darken(orange, 20%);
@@ -131,18 +130,21 @@
                     line-height: 50px;
                 }
                 .articels {
-                    display: inline-flex;
+                    display: flex;
                     width: 100%;
                     flex-wrap: wrap;
                     justify-content: space-around;
                     .articel {
                         text-align: center;
+                        border: 2px solid grey;
+                        margin: 0 20px;
+                        justify-content: space-between;
                         flex-grow: 1;
                     }
                 }
                 #main {
                     width: 100%;
-                    height: 700px;
+                    margin-bottom: 70px;
                     margin-top: 20px;
                     .form-control {
                         width: 100%;
@@ -187,12 +189,26 @@
             }
             #footer {
                 background-color: lighten(orange, 10%);
-                height: 200px;
                 width: 100%;
             }
             .footer-left {
-                width: 33%;
                 flex-wrap: wrap;
+                flex-grow: 1;
                 display: flex;
             }
+        }
+        
+        .articel-p {
+            flex-grow: 1;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+        
+        .articel-p:nth-last {
+            flex-grow: 1;
+            text-align: justify;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+        
+        .articel-img {
+            margin: 5px;
         }

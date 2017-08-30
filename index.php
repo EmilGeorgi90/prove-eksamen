@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -54,24 +55,49 @@
             </form>
             <div class="articels">
                 <articel class="articel"> <img src="https://hearthstone.gamepedia.com/media/hearthstone.gamepedia.com/thumb/d/d8/Snowflipper_Penguin%2862839%29_Gold.png/200px-Snowflipper_Penguin%2862839%29_Gold.png?version=0fd8537fe442cdc1c59f501abc8ec495" alt="" class="articel-img">
-                    <h2 class="articel-title">penguin</h2>
-                    <p class="articel-p">somecard</p>
+                    <hr>
+                    <p class="articel-p">type</p>
+                    <p class="articel-p">class</p>
+                    <p class="articel-p">set</p>
+                    <h2 class="articel-title">card title</h2>
+                    <p class="articel-p">card description</p>
+                    <p class="articel-p">form user: timestamp</p>
                 </articel>
                 <articel class="articel"> <img src="https://hearthstone.gamepedia.com/media/hearthstone.gamepedia.com/thumb/d/d8/Snowflipper_Penguin%2862839%29_Gold.png/200px-Snowflipper_Penguin%2862839%29_Gold.png?version=0fd8537fe442cdc1c59f501abc8ec495" alt="" class="articel-img">
-                    <h2 class="articel-title">penguin</h2>
-                    <p class="articel-p">somecard</p>
+                    <hr>
+                    <p class="articel-p">type</p>
+                    <p class="articel-p">class</p>
+                    <p class="articel-p">set</p>
+                    <h2 class="articel-title">card title</h2>
+                    <p class="articel-p">card description</p>
+                    <p class="articel-p">form user: timestamp</p>
                 </articel>
                 <articel class="articel"> <img src="https://hearthstone.gamepedia.com/media/hearthstone.gamepedia.com/thumb/d/d8/Snowflipper_Penguin%2862839%29_Gold.png/200px-Snowflipper_Penguin%2862839%29_Gold.png?version=0fd8537fe442cdc1c59f501abc8ec495" alt="" class="articel-img">
-                    <h2 class="articel-title">penguin</h2>
-                    <p class="articel-p">somecard</p>
+                    <hr>
+                    <p class="articel-p">type</p>
+                    <p class="articel-p">class</p>
+                    <p class="articel-p">set</p>
+                    <h2 class="articel-title">card title</h2>
+                    <p class="articel-p">card description</p>
+                    <p class="articel-p">form user: timestamp</p>
                 </articel>
                 <articel class="articel"> <img src="https://hearthstone.gamepedia.com/media/hearthstone.gamepedia.com/thumb/d/d8/Snowflipper_Penguin%2862839%29_Gold.png/200px-Snowflipper_Penguin%2862839%29_Gold.png?version=0fd8537fe442cdc1c59f501abc8ec495" alt="" class="articel-img">
-                    <h2 class="articel-title">penguin</h2>
-                    <p class="articel-p">somecard</p>
+                    <hr>
+                    <p class="articel-p">type</p>
+                    <p class="articel-p">class</p>
+                    <p class="articel-p">set</p>
+                    <h2 class="articel-title">card title</h2>
+                    <p class="articel-p">card description</p>
+                    <p class="articel-p">form user: timestamp</p>
                 </articel>
                 <articel class="articel"> <img src="https://hearthstone.gamepedia.com/media/hearthstone.gamepedia.com/thumb/d/d8/Snowflipper_Penguin%2862839%29_Gold.png/200px-Snowflipper_Penguin%2862839%29_Gold.png?version=0fd8537fe442cdc1c59f501abc8ec495" alt="" class="articel-img">
-                    <h2 class="articel-title">penguin</h2>
-                    <p class="articel-p">somecard</p>
+                    <hr>
+                    <p class="articel-p">type</p>
+                    <p class="articel-p">class</p>
+                    <p class="articel-p">set</p>
+                    <h2 class="articel-title">card title</h2>
+                    <p class="articel-p">card description</p>
+                    <p class="articel-p">form user: timestamp</p>
                 </articel>
             </div>
         </main>
@@ -82,9 +108,8 @@
                     <p>name:
                         <input type="text" name="name" class="username"> </p>
                     <p> Bug to fix:
-                        <textarea name="bug" class="username"></textarea>
-                    </p>
-                    <input type="submit" class="submit"> </form>
+                        <input type="text" name="bug" class="username">
+                        <input type="submit" class="submit" value="submit"> </form>
             </div>
         </footer>
     </div>
