@@ -15,6 +15,7 @@ include "include/connect.php";
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -26,15 +27,24 @@ include "include/connect.php";
         <![endif]-->
         <div id="wrapper">
             <header id="header">
-                <div class="header-bg"> </div>
+                <div class="header-bg"></div>
+                
                 <nav class="nav">
-                    <?php
+                <div class="phoneNav"><i class="fa fa-bars" aria-hidden="true"></i> </div>
+
+                                    <form action="include/seach.php" class="form-control" method="post">
+                                    <?php
                     if(isset($_COOKIE[$cookie_name])){
                         ?>
                         <li class="li-item"><a href="include/logout.php">logout</a></li>
-                        <li class="li-item"><a href="#">upload</a></li>
+                        <li class="li-item"><a href="#">upload</a></li></h2>
                         <?php
-                    }
+                if($_COOKIE['userLevel'] == 3){
+                    ?>
+                    <li class="li-item"><a href="#">level</a></li></h2>
+                <?php
+                }    
+                }
                         else{
                     ?>
                             <li class="li-item"><a href="#">login</a></li>
@@ -42,34 +52,28 @@ include "include/connect.php";
                             <?php
                             }
                     ?>
+                                    <input type="text" name="seach">
+                                    <input type="submit" value="search" class="submit"> 
+                    <select name="filter" id="" class="filter">
+                        <option value="">select a class to filter</option>
+                        <option value="warrior">warrior</option>
+                        <option value="shamen">shamen</option>
+                        <option value="mage">mage</option>
+                        <option value="hunter">hunter</option>
+                        <option value="druid">druid</option>
+                        <option value="paladin">paladin</option>
+                        <option value="rogue">rogue</option>
+                        <option value="priest">priest</option>
+                    </select>
+                    </form>
                 </nav>
-                <div class="ajax-content"></div>
+                <div class="ajax-content">
+                </div>
+
+                <hr class="style14">
             </header>
+            
             <main id="main">
-                <form action="include/seach.php" class="form-control" method="post">
-                    <input type="search" placeholder="seach for cards" name="seach" class="seach">
-                    <input type="button" name="filter" class="filter" value="show classes to filter">
-                    <input type="submit" value="search" class="submit"> </form>
-                <label class="classes-checkboxes-form">
-                    <p class="classes-checkboxes">warrior
-                        <input type="checkbox" name="warrior" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">shamen
-                        <input type="checkbox" name="shamen" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">rogue
-                        <input type="checkbox" name="rogue" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">paladin
-                        <input type="checkbox" name="paladin" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">hunter
-                        <input type="checkbox" name="hunter" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">druid
-                        <input type="checkbox" name="druid" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">mage
-                        <input type="checkbox" name="mage" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">warlock
-                        <input type="checkbox" name="warlock" class="classes-checkboxes"> </p>
-                    <p class="classes-checkboxes">priest
-                        <input type="checkbox" value="priest" name="priest" class="classes-checkboxes"> </p>
-                </label>
                 <div class="articels">
                     <?php
                     if(isset($_SESSION['Articel'])){
@@ -83,14 +87,14 @@ include "include/connect.php";
             </main>
             <footer id="footer">
                 <div class="footer-left">
-                    <h3>if you have any errors then call Admin on this contact</h3>
-                    <form action="contact.php" class="form-control">
-                        <p>name:
-                            <input type="text" name="name" class="username"> </p>
-                        <p> Bug to fix:
-                            <input type="text" name="bug" class="username">
-                            <input type="submit" class="submit" value="submit"> </form>
-                </div>
+                <form action="" id="weather" class="form-control" method="get">
+                <input type="text" id="text" class="username">
+                <button id="submitWeather" class="submit">submit</button>
+                
+    
+        </form>
+        <p class="the-weather" class="username" style="text-align: center;font-size: 2rem; width: 100%;"></p>
+                            </div>
             </footer>
         </div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -99,6 +103,7 @@ include "include/connect.php";
         </script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="weather.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function (b, o, i, l, e, r) {

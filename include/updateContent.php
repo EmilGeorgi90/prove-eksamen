@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "connect.php";
 include "function_test_input.php";
 $username = $_COOKIE[$cookie_name];
@@ -45,57 +46,36 @@ if ($uploadOk == 0) {
     }
 }
 print_r($target_file);
-$fileToUploadErr = $imgAltErr = $descriptionErr = $typeErr = $classErr = $cardSetErr = $cardNameErr = $usernameErr = "";
 $fileToUpload = $imgAlt = $description = $type = $class = $cardSet = $cardName  = "";
 //checking for the file is empty
-  if (empty($_POST["fileToUpload"])) {
+
     $fileToUploadErr = "you need to upload imgae";
-  } else {
+
     $fileToUpload = $target_file;
-  }
-      if (empty($_POST["imgAlt"])) {
-    $imgAltErr = "imgAlt is required";
-  } else {
+  
+
     $imgAlt = test_input($_POST["imgAlt"]);
           // looking for password and replay password are equel
-  }
-  
-  if (empty($_POST["description"])) {
-    $descriptionErr = "description is required";
-  } else {
+
+
     $description = test_input($_POST["description"]);
     // check if e-mail address is well-formed
-  }
-  if (empty($_POST["type"])) {
-    $typeErr = "type is required";
-  } else {
+
     $type = test_input($_POST["type"]);
-      // check if name only contains letters and whitespace
-  }
-      if (empty($_POST["class"])) {
-    $classErr = "class is required";
-  } else {
+
+
     $class = test_input($_POST["class"]);
-          // looking for password and replay password are equel
-  }
+
   
-  if (empty($_POST["cardSet"])) {
-    $cardSetErr = "cardSet is required";
-  } else {
+
     $cardSet = test_input($_POST["cardSet"]);
     // check if e-mail address is well-formed
-  }
-  if (empty($_POST["cardName"])) {
-    $cardNameErr = "cardName is required";
-  } else {
     $cardName = test_input($_POST["cardName"]);
     // check if e-mail address is well-formed
-  }
 
-    if(empty($fileToUploadErr) || empty($imgAltErr) || empty($descriptionErr) || empty($typeErr) || empty($classErr) || empty($cardSetErr) ||  empty($cardNameErr)){
         try{
             $target_file = "include/$target_file";
-        $sql = "INSERT INTO `content`(`imgSrc`, `imgAlt`, `description`, `type`, `class`, `cardSet`, `cardName`, `username`) VALUES (?,?,?,?,?,?,?,?); select login.username from login inner join content on login.username = content.username";
+        $sql = "UPDATE content set `imgSrc` = ?, `imgAlt` = ?, `description` = ?, `type` = ?, `class`= ?, `cardSet`= ?, `cardName`= ?, `username` = ? where CardName = ?; select login.username from login inner join content on login.username = content.username";
         $statement = $conn->prepare($sql);
         $statement->bindParam(1, $target_file);
             $statement->bindParam(2, $imgAlt);
@@ -105,12 +85,19 @@ $fileToUpload = $imgAlt = $description = $type = $class = $cardSet = $cardName  
             $statement->bindParam(6, $cardSet);
             $statement->bindParam(7, $cardName);
             $statement->bindParam(8, $_COOKIE[$cookie_name]);
+            
+            for($i = 0; $i < count($_SESSION["cardName"]); $i++){
+                
+                if($_SESSION["cardName"][$i]["cardName"] == $_SESSION["currentCard"][$i]["cardName"]){
+                    $statement->bindParam(9, $_SESSION["cardName"][$i]["cardName"]);
             $statement->execute();
-        header("location:../index.php");
+            break;
+                }
+            }
+            header("location:../index.php");
         }
         catch(PDOException $e){
             echo $e->getMessage();
         }
 
-    }
 ?>

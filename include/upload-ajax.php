@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<body>
+<?php
+include "connect.php";
+if(isset($_COOKIE[$cookie_name])){
+?>
     <form action="include/upload.php" method="post" class="upload" enctype="multipart/form-data">
         <input type="text" class="username" name="imgAlt" placeholder="img alt" required>
         <input type="text" class="username" name="description" placeholder="description" required>
@@ -20,11 +20,10 @@
                 <option value="mage">mage</option>
                 <option value="hunter">hunter</option>
                 <option value="druid">druid</option>
-                <option value="warlock">whispers of the old gods</option>
-                <option value="paladin">paladins</option>
+                <option value="paladin">paladin</option>
                 <option value="rogue">rogue</option>
                 <option value="priest">priest</option>
-                <option value="knigth of the frozen throne">knigth of the frozen throne</option>
+                <option value="warlock">warlock</option>
             </select>
         </label>
         <label class="username">expantion:
@@ -45,6 +44,7 @@
             <input type="file" name="fileToUpload" id="fileToUpload" required> </label>
         <input type="text" class="username" name="cardName" placeholder="card name" required>
         <input type="submit" value="upload article " class="submit " name="submit " required> </form>
-</body>
-
-</html>
+    <?php
+}else{
+    header("location:../index.php");
+}

@@ -1,235 +1,363 @@
-        * {}
-        
-        body {
-            width: 100%;
-            background-color: darken(orange, 5%);
-            height: 100%;
-            .really {
-                background-color: red;
-            }
-            .realy {
-                color: red;
-            }
-            #wrapper {
+$BackgroundColor: #F2AB52;
+@mixin background-color($backgroundColor: #6F6657) {
+    background: linear-gradient(darken($backgroundColor, 10%), darken($backgroundColor, 15%)), url(hearth-feature.jpg);
+}
+
+html,
+body {
+    width: 95%;
+    background-color: $BackgroundColor;
+    height: 100vw;
+    margin: 0 auto;
+    #wrapper {
+        width: 100%;
+        height: 100vw;
+        #header {
+            width: 100%; 
+            .header-bg {
+                margin-top: 1%;
+                background: url(HearthStone_Logo_2016_m011.png), linear-gradient($BackgroundColor, lighten($BackgroundColor, 2%));
+                height: 400px;
                 width: 100%;
-                height: 100%;
-                #header {
-                    width: 100%;
-                    .header-bg {
-                        margin-top: 1%;
-                        background: url(HearthStone_Logo_2016_m011.png);
-                        height: 400px;
-                        width: 100%;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        background-position: center;
-                        .title {
-                            text-align: center;
-                            color: darkorange;
-                        }
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .nav {
+                @include background-color(darken($BackgroundColor, 5%));
+                display: flex;
+                width: 98%;
+                border-radius: 5px;
+                margin: 10px auto;
+                padding-top: 20px;
+                border: 2px solid black;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                line-height: 25px;
+                .li-item {
+                    border-radius: 5px;
+                    list-style: none;
+                    flex-grow: 2;
+                    transition: 0.3s;
+                    margin: 0 25px;
+                    background-color: darken(orange, 5%);
+                    line-height: 50px;
+                    border: 2px solid darken(orange, 10%);
+                    box-shadow: 2px 2px 2px 2px darken($BackgroundColor, 20%);
+                    text-align: center;
+                    a {
+                        color: black;
+                        text-decoration: none;
                     }
-                    .nav {
+                    &:hover {
+                        background-color: lighten($BackgroundColor, 12%);
+                        transition: 0.3s;
+                    }
+                }    .form-control {
+                        @include background-color(darken($BackgroundColor, 2%));
                         display: flex;
-                        width: 100%;
+                        padding: 10px 0;
                         flex-wrap: wrap;
                         justify-content: space-around;
-                        line-height: 50px;
-                        .li-item {
-                            list-style: none;
-                            width: 30%;
-                            transition: 0.3s;
-                            background-color: orange;
-                            margin: 0 2px;
-                            border: 2px solid lighten(orange, 10%);
-                            box-shadow: 2px 2px 2px 2px darken(grey, 20%);
-                            text-align: center;
-                            a {
-                                color: black;
-                                text-decoration: none;
-                            }
-                            &:hover {
-                                background-color: lighten(orange, 20%);
-                                transition: 0.3s;
-                            }
-                        }
-                    }
+                
+            }
+            }
+        }
+        .form-control {
+            @include background-color(darken($BackgroundColor, 2%));
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .username {
+                flex-grow: 1;
+                margin: 0 15px;
+                text-align: center;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 50px;
+                border-radius: 5px;
+            }
+            .password {
+                text-align: center;
+                flex-grow: 1;
+                margin: 0 15px;
+                margin: 0 3%;
+                border-radius: 5%;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 50px;
+                border-radius: 5px;
+            }
+            .submit {
+                text-align: center;
+                flex-grow: 1;
+                margin: 0 15px;
+                background-color: orange;
+                transition: 0.3s;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 50px;
+                border-radius: 5px;
+                &:hover {
+                    transition: 0.3s;
+                    background-color: lighten(orange, 10%);
                 }
-                .form-control {
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    .username {
-                        flex-grow: 1;
-                        text-align: center;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 50px;
-                    }
-                    .password {
-                        text-align: center;
-                        width: 40%;
-                        margin: 0 3%;
-                        border-radius: 5%;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 50px;
-                    }
-                    .submit {
-                        text-align: center;
-                        flex-grow: 1;
-                        background-color: orange;
-                        transition: 0.3s;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 50px;
-                        &:hover {
-                            transition: 0.3s;
-                            background-color: lighten(orange, 10%);
-                        }
-                    }
-                }
-                .upload {
-                    .username {
-                        text-align: center;
-                        margin: 0 3%;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 70px;
-                    }
-                    .password {
-                        text-align: center;
-                        flex-grow: 1;
-                        border-radius: 5%;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 50px;
-                    }
-                    .submit {
-                        text-align: center;
-                        width: 40%;
-                        margin: 0 3%;
-                        background-color: orange;
-                        transition: 0.3s;
-                        border: 2px solid darken(orange, 20%);
-                        box-shadow: inset 0 0 10px black;
-                        line-height: 70px;
-                        &:hover {
-                            transition: 0.3s;
-                            background-color: lighten(orange, 10%);
-                        }
-                    }
-                }
-                .filter-control {
-                    flex-grow: 1;
-                    display: inline-block;
-                    flex-wrap: wrap;
+            }.seach {
                     text-align: center;
-                    margin: 0;
-                    align-items: center;
-                    top: 60%;
-                    justify-content: space-around;
+                    border-radius: 5%;
+                    flex-grow: 2;
+                    border: 2px solid darken(orange, 20%);
+                    box-shadow: inset 0 0 10px black;
+                    margin: 0 15px;
                     line-height: 50px;
                 }
-                .articels {
-                    display: flex;
-                    width: 100%;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    hr.style14 {
-                        border: 0;
-                        height: 1px;
-                        background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-                        background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-                        background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-                        background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-                    }
-                    .articel {
-                        text-align: center;
-                        border: 2px solid grey;
-                        margin: 0 20px;
-                        justify-content: space-between;
-                        flex-grow: 1;
+                .filter {
+                    text-align: center;
+                    margin: 0 15px;
+                    transition: 0.3s;
+                    background-color: orange;
+                    border: 2px solid darken(orange, 20%);
+                    border-radius: 5%;
+                    line-height: 50px;
+                    &:hover {
+                        transition: 0.3s;
+                        background-color: lighten(orange, 10%);
                     }
                 }
-                #main {
-                    width: 100%;
-                    margin-bottom: 70px;
-                    margin-top: 20px;
-                    .form-control {
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-around;
-                        .seach {
-                            text-align: center;
-                            border-radius: 5%;
-                            flex-grow: 1;
-                            border: 2px solid darken(orange, 20%);
-                            box-shadow: inset 0 0 10px black;
-                            line-height: 50px;
-                        }
-                        .filter {
-                            text-align: center;
-                            flex-grow: 1;
-                            transition: 0.3s;
-                            background-color: orange;
-                            border: 2px solid darken(orange, 20%);
-                            box-shadow: inset 0 0 10px black;
-                            line-height: 50px;
-                            &:hover {
-                                transition: 0.3s;
-                                background-color: lighten(orange, 10%);
-                            }
-                        }
-                    }
-                    .classes-checkboxes-form {
-                        display: flex;
-                        flex-wrap: wrap;
-                        flex-grow: 1;
-                        text-align: center;
-                        justify-content: space-around;
-                        .classes-checkboxes {
-                            flex-grow: 1;
-                            font-size: 2rem;
-                        }
-                    }
-                }
-            }
-            #footer {
-                background-color: lighten(orange, 10%);
-                width: 100%;
-            }
-            .footer-left {
-                flex-wrap: wrap;
-                flex-grow: 1;
-                display: flex;
-            }
         }
-        
-        .articel-p {
-            flex-grow: 1;
-            font-family: 'Open Sans Condensed', sans-serif;
-        }
-        
-        .articel-p:nth-last {
-            flex-grow: 1;
-            text-align: justify;
-            font-family: 'Open Sans Condensed', sans-serif;
-        }
-        
-        .articel-img {
-            margin: 5px;
-        }
-        
         .upload {
+            @include background-color(darken($BackgroundColor, 5%));
+            .username {
+                text-align: center;
+                margin: 0 3%;
+                width: 40%;
+                border-radius: 5px;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 70px;
+            }
+            .password {
+                text-align: center;
+                flex-grow: 1;
+                border-radius: 5px;
+                border-radius: 5%;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 50px;
+            }
+            .submit {
+                text-align: center;
+                border-radius: 5px;
+                width: 40%;
+                margin: 0 3%;
+                background-color: orange;
+                transition: 0.3s;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 70px;
+                &:hover {
+                    transition: 0.3s;
+                    background-color: lighten(orange, 10%);
+                }
+            }
+        }
+        #main .articels {
+            @include background-color(darken($BackgroundColor, 1%));
             display: flex;
             width: 100%;
+            padding-top: 10px;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
+            hr.style14 {
+                border: 0;
+                height: 1px;
+                background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            }
+            .articel {
+                text-align: center;
+                @include background-color(darken($BackgroundColor, 5%));
+                border: 1px solid darken($BackgroundColor, 20%);
+                margin: 5px 20px;
+                max-width: 30%;
+                div{
+                    width: 98%;
+                    margin: 0 auto;
+                    float: left;
+                }
+                p {
+                    text-align: left;
+                    padding-left: 20px;
+                }
+                img{
+                    max-width: 30%;
+                    max-height: 30%;
+                    float: right;
+                }
+
+                .form-control {
+                    width: 95%;
+                    margin: 3px auto;
+                    .submit {
+                        margin: 0;
+                    }
+                }
+            }
         }
-        
-        .label {
+        #main {
+            @include background-color(darken($BackgroundColor, 1%));
+            width: 98%;
+            margin: 0 auto;
+            padding: 10px 0;
+            border-radius:5px;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            background-position-y: bottom;
+            margin-bottom: 70px;
+            margin-top: 40px;
+            box-shadow: 0 8px 6px -6px black;
+
+            .submit {
+                text-align: center;
+                margin: 0 !important;
+                width: 100%;
+                background-color: orange;
+                transition: 0.3s;
+                border: 2px solid darken(orange, 20%);
+                box-shadow: inset 0 0 3px black;
+                line-height: 50px;
+                border-radius: 5px;
+                &:hover {
+                    transition: 0.3s;
+                    background-color: lighten(orange, 10%);
+                }}
+            }
+            .classes-checkboxes-form {
+                @include background-color(darken($BackgroundColor, 5%));
+                display: flex;
+                flex-wrap: wrap;
+                flex-grow: 1;
+                text-align: center;
+                justify-content: space-around;
+                .classes-checkboxes {
+                    flex-grow: 1;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    #footer {
+        box-shadow: 0 8px 6px -6px black;
+        width: 98%;
+        margin: 0 auto;
+        border: 2px solid black;
+        margin-bottom: 5px; 
+        text-align: center;
+        .footer-left {
+            @include background-color($BackgroundColor);
+            text-align: center;
+            flex-wrap: wrap;
             flex-grow: 1;
-            width: 100%;
+            display: flex;
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
         }
+        .form-control {
+            background-color: $BackgroundColor;
+        }
+    }
+
+.articel-p {
+    flex-grow: 1;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.articel-p:nth-last {
+    flex-grow: 1;
+    text-align: justify;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.articel-img {
+    margin: 5px;
+}
+
+.upload {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.label {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.ajax-content {
+    width: 100%;
+    select {
+        width: 40%;
+    }
+    #fileToUpload {
+        width: 40%;
+    }
+}
+.phoneNav{
+    display: none;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    float: left;
+}
+@media screen and (max-width: 1200px) {
+    html body #wrapper #main .form-control {
+        padding: 0;
+        .seach {
+            margin-right: 0;
+        }
+        .filter {
+            margin: 0;
+        }
+        .submit {
+            margin-left: 0;
+        }
+    }
+    .articel{
+        max-width: 100% !important;
+    }
+    html body #wrapper #main .articels .articel {
+        width: 100vw;
+        text-align: center;
+        .articel-p {
+            text-align: left;
+        }
+    }
+    body{
+        width: 100%;
+    }
+    .header-bg{
+        background-size: contain !important;
+    }
+    .filter{
+        margin-right: 0 !important;
+    }
+    
+    nav .submit{
+        margin-left: 0 !important;
+    }
+    html body #wrapper #header .nav .form-control{
+        display: none ;
+    }
+    body #wrapper #header nav .phoneNav{
+        display: block;
+    }
+}
+#fileToUpload{
+    font-size: 1rem;
+}

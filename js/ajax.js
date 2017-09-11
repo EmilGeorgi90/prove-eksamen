@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".li-item a").click(function (event) {
-        if ($(this).text() === "login" || $(this).text() === "register" || $(this).text() === "upload") {
+        if ($(this).text() != "logout") {
             event.preventDefault();
             $(".ajax-content").load("./include/" + $(this).text() + "-ajax.php", function (responseTxt, statusTxt, xhr) {
                 if (statusTxt == "error") alert("Error: " + xhr.status + ": " + xhr.statusText);
@@ -8,4 +8,8 @@ $(document).ready(function () {
         }
         else {}
     });
+        $("button").click(function (event) {
+            event.preventDefault();
+            $(this).children(".update").slideDown("slow");
+        });
 })
